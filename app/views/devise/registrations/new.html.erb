@@ -1,20 +1,28 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name, multipart: true)) do |f| %>
-  <%= f.error_notification %>
+<head>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+</head>
 
-  <div class="form-inputs">
-	  <%= f.input :first_name, required: true, autofocus: true %>
-	  <%= f.input :last_name, required: true %>
-	  <%= f.input :user_name, required: true %>
-    <%= f.input :email, required: true%>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-    <%= f.input :password_confirmation, required: true %>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <article class="type-system-slab">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name, multipart: true)) do |f| %>
+        <h1>Sign Up</h1>
+	      <h2><%= f.error_notification %></h2>
+        <p>
+	        <%= f.input :first_name, required: true, autofocus: true %>
+	        <%= f.input :last_name, required: true %>
+	        <%= f.input :user_name, required: true %>
+	        <%= f.input :email, required: true%>
+	        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+	        <%= f.input :password_confirmation, required: true %>
+        </p>
+        <hr>
+		      <%= f.button :submit, 'Sign Up' %>
+		      <% end %>
+      </article>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

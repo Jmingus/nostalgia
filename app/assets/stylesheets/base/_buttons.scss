@@ -2,10 +2,10 @@
 button {
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
-  background-color: $action-color;
+  background-color: white;
   border-radius: $base-border-radius;
   border: none;
-  color: #fff;
+  color: #303030;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
