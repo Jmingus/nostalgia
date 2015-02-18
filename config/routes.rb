@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :scraps
   end
-  get 'scraps/new'
+  get '/new' => 'scraps#new'
 
   get 'scraps/edit'
 
