@@ -9,11 +9,14 @@
 	          <p><%= image_tag scrap.scrap_picture.url(:medium) %></p>
 	          <p>	<%= scrap.caption %></p>
           <hr>
-	          <p class="author"><%= scrap.favorite %></p>
+	          <p class="author"><%= scrap.favorite %> |
+	            <%= link_to "Data Report (as CSV)", all_report_path('csv') %>
+	          </p>
 
         </article>
       </div>
     </div>
+
   </div>
   <% end %>
 <% else %>
