@@ -9,6 +9,24 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<button type="button" class="js-menu-trigger sliding-menu-button">
+  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+</button>
+
+<nav class="js-menu sliding-menu-content">
+  <ul>
+	  <% if user_signed_in? %>
+      <li><a href="javascript:void(0)">User: <%= current_user.user_name %></a></li>
+		  <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+		  <% else %>
+    <li><%= link_to 'Sign In', new_user_session_path %></li>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+		<% end %>
+  </ul>
+</nav>
+
+<div class="js-menu-screen sliding-menu-fade-screen"></div>
+
 <%= yield %>
 
 </body>

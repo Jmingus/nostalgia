@@ -1,6 +1,36 @@
+
+<% if user_signed_in? %>
 <% @user.scraps.each do |scrap| %>
 	<%= image_tag scrap.scrap_picture.url(:medium) %>
 	<%= scrap.title %>
 	<%= scrap.caption %>
 	<%= scrap.favorite %>
+<% end %>
+
+<% else %>
+  <head>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <article class="type-system-slab">
+          <h1>Nostalgia</h1>
+          <h2>What is it?</h2>
+          <p>Nostalgia is a sentimental longing or wistful affection for the past, typically for a period or place with happy personal associations.</p>
+          <h3>So what does this Application do for you?</h3>
+          <p>It's hard trying to keep all your memories organized, sometimes you need a little help keeping it easily accessible so you can show your friends.
+            That's where nostalgia comes in, we will keep track of all your photos for you, let you track your favorite photos, and hopefully keep your memories
+            alive and well.</p>
+          <hr>
+          <p class="author">Application by: Jacob Mingus</p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+
 <% end %>

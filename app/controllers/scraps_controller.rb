@@ -1,4 +1,5 @@
 class ScrapsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @scrap = Scrap.new
   end

@@ -1,7 +1,8 @@
 <%= simple_form_for([current_user,@scrap],multipart: true) do |f| %>
 	<%= f.input :title,required: true, autofocus: true %>
+  <%= f.input :scrap_picture,required: true, as: :file %>
 	<%= f.input :caption,required: true %>
-	<%= f.input :favorite,required: true, as: :boolean %>
-	<%= f.input :scrap_picture,required: true, as: :file %>
+	<%= f.input :favorite, as: :boolean %>
+
 	<%= f.button :submit %>
 <% end %>
