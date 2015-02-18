@@ -1,8 +1,25 @@
-<%= simple_form_for([current_user,@scrap],multipart: true) do |f| %>
-	<%= f.input :title,required: true, autofocus: true %>
-  <%= f.input :scrap_picture,required: true, as: :file %>
-	<%= f.input :caption,required: true %>
-	<%= f.input :favorite, as: :boolean %>
+<head>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+</head>
 
-	<%= f.button :submit %>
-<% end %>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <article class="type-system-slab">
+        <%= simple_form_for([current_user,@scrap],multipart: true) do |f| %>
+          <h1>Create Scrap</h1>
+          <h2><%= f.error_notification %></h2>
+          <p>
+            <%= f.input :title,required: true, autofocus: true %>
+            <%= f.input :scrap_picture,required: true, as: :file %>
+            <%= f.input :caption,required: true %>
+            <%= f.input :favorite, as: :boolean %>
+          </p>
+          <hr>
+          <%= f.button :submit, 'Create Scrap' %>
+        <% end %>
+      </article>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,21 @@
 
 <% if user_signed_in? %>
-<% @user.scraps.each do |scrap| %>
-	<%= image_tag scrap.scrap_picture.url(:medium) %>
-	<%= scrap.title %>
-	<%= scrap.caption %>
-	<%= scrap.favorite %>
-<% end %>
+  <% @user.scraps.each do |scrap| %>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <article class="type-system-slab">
+          <h1><%= scrap.title %></h1>
+	          <p><%= image_tag scrap.scrap_picture.url(:medium) %></p>
+	          <p>	<%= scrap.caption %></p>
+          <hr>
+	          <p class="author"><%= scrap.favorite %></p>
+
+        </article>
+      </div>
+    </div>
+  </div>
+  <% end %>
 
 <% else %>
   <head>
