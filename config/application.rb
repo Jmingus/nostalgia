@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'wicked_pdf'
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -29,6 +29,7 @@ module Nostalgia
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.middleware.use WickedPdf::Middleware
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

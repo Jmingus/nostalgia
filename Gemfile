@@ -43,7 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 gem 'kaminari'
 gem 'puma'
 gem 'rails_12factor'
@@ -56,6 +57,9 @@ group :test, :development do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'simplecov'
 end
 
 gem 'bourbon'
