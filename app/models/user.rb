@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
 
   def self.to_csv
     CSV.generate do |csv|
-      csv << User.new.attributes.keys
-      User.all.each do |user|
+      csv << column_names
+      all.each do |user|
         csv << user.attributes.values
       end
     end

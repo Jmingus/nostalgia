@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
   def all_report
     respond_to do |format|
       format.csv do
-        render text: User.to_csv
+        send_data User.to_csv, filename: 'users_report.csv', disposition: 'download'
       end
     end
   end
